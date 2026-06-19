@@ -46,12 +46,20 @@ const CandidateDashboard = () => {
             <h1 className="text-3xl font-bold text-slate-800 mb-2">Welcome, {user?.name}!</h1>
             <p className="text-slate-500">Here's an overview of your job applications and resume status.</p>
           </div>
-          <button 
-            onClick={() => navigate('/upload-resume')}
-            className="flex items-center gap-2 bg-primary-600 text-white px-5 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg hover:bg-primary-700 transition"
-          >
-            <Plus size={20} /> Analyze New Resume
-          </button>
+          <div className="flex gap-3">
+            <button 
+              onClick={() => navigate('/jobs')}
+              className="bg-white text-primary-600 border border-primary-200 px-5 py-2.5 rounded-lg font-medium shadow-sm hover:bg-primary-50 transition"
+            >
+              Browse Jobs
+            </button>
+            <button 
+              onClick={() => navigate('/upload-resume')}
+              className="flex items-center gap-2 bg-primary-600 text-white px-5 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg hover:bg-primary-700 transition"
+            >
+              <Plus size={20} /> Analyze New Resume
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

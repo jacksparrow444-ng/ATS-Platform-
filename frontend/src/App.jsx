@@ -6,6 +6,8 @@ import RecruiterDashboard from './pages/RecruiterDashboard';
 import Profile from './pages/Profile';
 import ResumeUpload from './pages/ResumeUpload';
 import AnalysisResult from './pages/AnalysisResult';
+import JobListing from './pages/JobListing';
+import AnalyticsDashboard from './pages/AnalyticsDashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -41,6 +43,14 @@ function App() {
             </ProtectedRoute>
           } 
         />
+        <Route 
+          path="/jobs" 
+          element={
+            <ProtectedRoute allowedRoles={['Candidate']}>
+              <JobListing />
+            </ProtectedRoute>
+          } 
+        />
         
         {/* Recruiter Routes */}
         <Route 
@@ -48,6 +58,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['Recruiter']}>
               <RecruiterDashboard />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/analytics" 
+          element={
+            <ProtectedRoute allowedRoles={['Recruiter']}>
+              <AnalyticsDashboard />
             </ProtectedRoute>
           } 
         />
