@@ -4,6 +4,8 @@ import Register from './pages/Register';
 import CandidateDashboard from './pages/CandidateDashboard';
 import RecruiterDashboard from './pages/RecruiterDashboard';
 import Profile from './pages/Profile';
+import ResumeUpload from './pages/ResumeUpload';
+import AnalysisResult from './pages/AnalysisResult';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -20,6 +22,22 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['Candidate']}>
               <CandidateDashboard />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/upload-resume" 
+          element={
+            <ProtectedRoute allowedRoles={['Candidate']}>
+              <ResumeUpload />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/analysis-result" 
+          element={
+            <ProtectedRoute allowedRoles={['Candidate']}>
+              <AnalysisResult />
             </ProtectedRoute>
           } 
         />
